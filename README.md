@@ -1,4 +1,4 @@
-# a-terrible-game
+# good-game
 Our attempt to make a truly horrificly bad game.
 
 
