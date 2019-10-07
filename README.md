@@ -1,5 +1,5 @@
 # good-game
-Our attempt to make a truly horrificly bad game.
+Our attempt to make a horrificly bad game with excellent programming.
 
 
 ## Planned Features
