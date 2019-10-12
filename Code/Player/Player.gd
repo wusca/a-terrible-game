@@ -6,6 +6,7 @@ const gravity = 30
 var velocity = Vector2(0, 0)
 
 var jump_height = 500
+var double_jump_height = 600
 var speed = 12
 var can_double_jump = true
 
@@ -14,7 +15,7 @@ func _physics_process(delta):
 	handle_input()
 	run_physics()
 
-#input
+
 func handle_input():
 	#Handles input flags and calls corresponding functions
 	if (Input.is_action_pressed("move_left")):
@@ -28,7 +29,7 @@ func handle_input():
 			velocity.y -= jump_height
 		else:
 			if (can_double_jump):
-				velocity.y -=jump_height
+				velocity.y -= double_jump_height
 				can_double_jump = false
 
 
