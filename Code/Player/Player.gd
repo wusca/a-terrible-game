@@ -20,7 +20,7 @@ func handle_input():
 	#Handles input flags and calls corresponding functions
 	if (Input.is_action_pressed("move_left")):
 		velocity.x -= speed
-		
+
 	if (Input.is_action_pressed("move_right")):
 		velocity.x += speed
 		
@@ -55,4 +55,3 @@ func decel():
 		velocity.x *= .95
 	else:
 		velocity *= 0.99
-
