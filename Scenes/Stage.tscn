@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/Level.gd" type="Script" id=1]
 [ext_resource path="res://Classes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Tiles/JungleDirtTileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Classes/Spikes.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5000, 100 )
@@ -24,3 +25,6 @@ tile_data = PoolIntArray( 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death Area"]
 position = Vector2( 351.863, 485.898 )
 shape = SubResource( 1 )
+
+[node name="Spikes" parent="." instance=ExtResource( 4 )]
+position = Vector2( 60, 100 )
