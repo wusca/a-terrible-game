@@ -10,13 +10,16 @@ var speed = 12
 var can_double_jump = true
 
 func _physics_process(delta):
-	handleInput()
-	runPhysics()
+	#Calls functions that need to be synchronized with physics engine
+	handle_input()
+	run_physics()
 
 #input
-func handleInput():
+func handle_input():
+	#Handles input flags and calls corresponding functions
 	if (Input.is_action_pressed("move_left")):
 		velocity.x -= speed
+		
 	if (Input.is_action_pressed("move_right")):
 		velocity.x += speed
 		
@@ -30,11 +33,19 @@ func handleInput():
 
 
 # Physics stuff
+func run_physics():
+	#General physics call
+	gravity()
+	velocity = move_and_slide(velocity, UP)
+	decel()
+
+
 func gravity():
 #	if (!is_on_floor()):
 	velocity.y += gravity
 	if (is_on_floor()):
 		can_double_jump = true
+
 
 func decel():
 	#slow me down, chappi
@@ -43,9 +54,4 @@ func decel():
 		velocity.x *= .95
 	else:
 		velocity *= 0.99
-
-func runPhysics():
-	gravity()
-	velocity = move_and_slide(velocity, UP)
-	decel()
 
