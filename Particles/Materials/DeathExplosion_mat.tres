@@ -14,7 +14,7 @@ _data = [ Vector2( 0, 0.2624 ), 0.0, 0.0, 0, 0, Vector2( 0.207153, 0.9928 ), 0.0
 curve = SubResource( 3 )
 
 [resource]
-trail_divisor = 2
+trail_divisor = 3
 trail_size_modifier = SubResource( 4 )
 flag_disable_z = true
 spread = 180.0
