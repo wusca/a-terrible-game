@@ -6,7 +6,7 @@
 
 [node name="DeathExplosion" type="Particles2D"]
 emitting = false
-amount = 150
+amount = 300
 lifetime = 1.5
 one_shot = true
 speed_scale = 1.5
