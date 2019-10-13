@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 QuickTimer="*res://Code/Autoload/QuickTimer.gd"
 SoundSystem="*res://Code/Autoload/SoundSystem.gd"
+HelperFunctions="*res://Code/Autoload/HelperFunctions.gd"
 
 [display]
 

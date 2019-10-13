@@ -3,7 +3,8 @@ extends KinematicBody2D
 const UP = Vector2(0, -1)
 const gravity = 30
 const jump_sound1="jump1"
-const jump_type=".ogg"
+const jump_sound2="jump2"
+const jump_sound_type=".ogg"
 
 var velocity = Vector2(0, 0)
 
@@ -55,12 +56,12 @@ func handle_input():
 	if (Input.is_action_just_pressed("jump")):
 		if (is_on_floor()):
 			velocity.y -= jump_height
-			SoundSystem.play_sound(jump_sound1,jump_type)
+			SoundSystem.play_sound(HelperFunctions.pick_one([jump_sound1,jump_sound2]),jump_sound_type)
 		else:
 			if (can_double_jump):
 				velocity.y -= double_jump_height
 				can_double_jump = false
-				SoundSystem.play_sound(jump_sound1,jump_type)
+				SoundSystem.play_sound(HelperFunctions.pick_one([jump_sound1,jump_sound2]),jump_sound_type)
 
 # Physics stuff
 func run_physics():
