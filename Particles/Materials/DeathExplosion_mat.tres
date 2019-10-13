@@ -1,4 +1,4 @@
-[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
+[gd_resource type="ParticlesMaterial" load_steps=5 format=2]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.171429, 1 )
@@ -7,8 +7,15 @@ colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.2624 ), 0.0, 0.0, 0, 0, Vector2( 0.207153, 0.9928 ), 0.0, 0.0, 0, 0, Vector2( 0.303086, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
 [resource]
 trail_divisor = 2
+trail_size_modifier = SubResource( 4 )
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 100, 0 )

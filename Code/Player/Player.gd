@@ -32,7 +32,6 @@ func handle_input():
 				velocity.y -= double_jump_height
 				can_double_jump = false
 
-
 # Physics stuff
 func run_physics():
 	#General physics call
@@ -55,3 +54,19 @@ func decel():
 		velocity.x *= .95
 	else:
 		velocity *= 0.99
+
+
+func death():
+	#Kills the player
+	spawn_blood()
+	get_parent().respawn(self)
+
+
+
+var blood_res=preload("res://Classes/Effects/DeathExplosion.tscn")
+func spawn_blood():
+	#spawns in a blood particle
+	var inst=blood_res.instance()
+	get_parent().add_child(inst)
+	inst.position=self.position
+	

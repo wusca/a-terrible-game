@@ -1,7 +1,9 @@
 extends Particles2D
 
 
-
+var cd=1.8
 func _process(delta):
 	#Just a countdown for death
-	queue_free()
+	cd-=delta
+	if(cd<0):
+		queue_free()
