@@ -59,7 +59,9 @@ func decel():
 func death():
 	#Kills the player
 	spawn_blood()
-	get_parent().respawn(self)
+	self.hide()
+	QuickTimer.create_timer(get_parent(),"respawn",[self],0.4)
+	#get_parent().respawn(self)
 
 
 
