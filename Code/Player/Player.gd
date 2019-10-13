@@ -15,6 +15,9 @@ func _physics_process(delta):
 	#Calls functions that need to be synchronized with physics engine
 	handle_input()
 	run_physics()
+	handle_animation()
+
+
 
 func set_dir(east=true):
 	#sets direction and updates character
@@ -23,6 +26,16 @@ func set_dir(east=true):
 		get_node("Sprite").scale.x=-1
 	else:
 		get_node("Sprite").scale.x=1
+
+func handle_animation():
+	#Updates character animation cycles based on variables
+	
+	if(velocity.length()>8):
+		#we're moving!
+		get_node("AnimationPlayer").play("walk")
+	else:
+		get_node("AnimationPlayer").play("idle")
+	
 	
 
 func handle_input():
