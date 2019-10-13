@@ -11,8 +11,9 @@ func _ready():
 func respawn(body):
 	#Respawns a player
 	get_node("Player").position = default_player_position
+	get_node("Player").show()
 
 
-func kill_player(body):
+func death(body):
 	#Kills the player
 	get_node("Player").death()
