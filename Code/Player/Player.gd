@@ -9,20 +9,32 @@ var jump_height = 500
 var double_jump_height = 600
 var speed = 12
 var can_double_jump = true
+var dir=true		#true if facing east, false if he's facing west
 
 func _physics_process(delta):
 	#Calls functions that need to be synchronized with physics engine
 	handle_input()
 	run_physics()
 
+func set_dir(east=true):
+	#sets direction and updates character
+	dir=east
+	if(east!=true):
+		get_node("Sprite").scale.x=-1
+	else:
+		get_node("Sprite").scale.x=1
+	
 
 func handle_input():
 	#Handles input flags and calls corresponding functions
 	if (Input.is_action_pressed("move_left")):
 		velocity.x -= speed
+		set_dir(false)
+		
 
-	if (Input.is_action_pressed("move_right")):
+	elif (Input.is_action_pressed("move_right")):
 		velocity.x += speed
+		set_dir(true)
 		
 	if (Input.is_action_just_pressed("jump")):
 		if (is_on_floor()):
