@@ -5,7 +5,7 @@ var default_player_position = Vector2(0, 0)
 func _ready():
 	#Calls startup functions
 	default_player_position = get_node("Player").position
-	get_node("Death Area").connect("body_entered", self, "kill_player")
+	get_node("Death Area").connect("body_entered", self, "death")
 
 
 func respawn(body):
