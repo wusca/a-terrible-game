@@ -29,13 +29,14 @@ func set_dir(east=true):
 
 func handle_animation():
 	#Updates character animation cycles based on variables
-	
-	if(velocity.length()>8):
+	if(is_on_floor()):
+		if(velocity.length()>8):
 		#we're moving!
-		get_node("AnimationPlayer").play("walk")
+			get_node("AnimationPlayer").play("walk")
+		else:
+			get_node("AnimationPlayer").play("idle")
 	else:
-		get_node("AnimationPlayer").play("idle")
-	
+		get_node("AnimationPlayer").play("jump")
 	
 
 func handle_input():
@@ -76,9 +77,9 @@ func decel():
 	#slow me down, chappi
 	if (is_on_floor()):
 		#velocity.y = 0
-		velocity.x *= .95
+		velocity.x *= .92
 	else:
-		velocity *= 0.99
+		velocity.x *= 0.98
 
 
 func death():
